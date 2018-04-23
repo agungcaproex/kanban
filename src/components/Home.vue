@@ -18,8 +18,8 @@
                       <div>
                         <h4><strong>{{ tasklist.title }}</strong></h4>
                         <hr>
-                        <p>Point: {{tasklist.point}} </p>
-                        <p>Assigned To: {{ tasklist.assign }}</p>
+                        <p><strong> Point: </strong>{{tasklist.point}} </p>
+                        <p><strong> Assigned To: </strong> {{ tasklist.assign }}</p>
                         <button @click="showDetail(tasklist)" class="btn btn-danger" data-toggle="modal" data-target="#modalDetail">Detail</button>
                       </div>
                     </div>
@@ -42,8 +42,8 @@
                       <div>
                         <h4><strong>{{ tasklist.title }}</strong></h4>
                         <hr>
-                        <p>Point: {{tasklist.point}} </p>
-                        <p>Assigned To: {{ tasklist.assign }}</p>
+                        <p><strong> Point: </strong>{{tasklist.point}} </p>
+                        <p><strong> Assigned To: </strong> {{ tasklist.assign }}</p>
                         <button @click="showDetail(tasklist)" class="btn btn-warning" data-toggle="modal" data-target="#modalDetail">Detail</button>
                       </div>
                     </div>
@@ -66,8 +66,8 @@
                       <div>
                         <h4><strong>{{ tasklist.title }}</strong></h4>
                         <hr>
-                        <p>Point: {{tasklist.point}} </p>
-                        <p>Assigned To: {{ tasklist.assign }}</p>
+                        <p><strong> Point: </strong>{{tasklist.point}} </p>
+                        <p><strong> Assigned To: </strong> {{ tasklist.assign }}</p>
                         <button @click="showDetail(tasklist)" class="btn btn-info" data-toggle="modal" data-target="#modalDetail">Detail</button>
                       </div>
                     </div>
@@ -90,8 +90,8 @@
                       <div>
                         <h4><strong>{{ tasklist.title }}</strong></h4>
                         <hr>
-                        <p>Point: {{tasklist.point}} </p>
-                        <p>Assigned To: {{ tasklist.assign }}</p>
+                        <p><strong> Point: </strong>{{tasklist.point}} </p>
+                        <p><strong> Assigned To: </strong> {{ tasklist.assign }}</p>
                         <button @click="showDetail(tasklist)" class="btn btn-success" data-toggle="modal" data-target="#modalDetail">Detail</button>
                       </div>
                     </div>
@@ -142,22 +142,21 @@
     </div>
 
     <!-- Detail Modal Task -->
-    
     <div class="modal fade" v-if="currentTask !== null" id="modalDetail" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Detail Task</h4>
-            <h5> {{currentTask}} </h5>
+            <!-- <h5> {{currentTask}} </h5> -->
           </div>
           <div class="modal-body">
             <form>
               <div class="form-group">
                 <label for="Title">{{ currentTask.title }} for {{ currentTask.assign }}</label>
-                <p>Task Description: {{ currentTask.description }}</p>
-                <p>Point: {{ currentTask.point }}</p>
-                <p>Status: {{ currentTask.status }}</p>
+                <p><strong>Task Description:</strong>  {{ currentTask.description }}</p>
+                <p><strong> Point: </strong>{{currentTask.point}} </p>
+                <p><strong> Status: </strong>{{currentTask.status}} </p>
               </div>
             </form>
           </div>
@@ -253,5 +252,16 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
 }
 </style>
